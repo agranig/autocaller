@@ -25,7 +25,7 @@ cat /tmp/numbers.txt
 0123456789
 ```
 
-Then call them in a loop by executing `for num in $(cat /tmp/numbers.txt); do ./dial.sh $num 10 30; done`.
+Then call them one by one by executing `for num in $(cat /tmp/numbers.txt); do ./dial.sh $num 10 30; done`.
 
 * If calls happen to fail because they take longer than 5s to get into ringing state, increase the `failed_threshold` variable and your ring-timeout cmd line parameter in `dial.sh`.
 
