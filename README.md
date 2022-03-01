@@ -36,4 +36,4 @@ Then call them one by one by executing `for num in $(cat /tmp/numbers.txt); do .
 
 # Disclaimer
 
-Desperate times call for desperate measures, and this is one of them. Don't abuse this tool.
+Desperate times call for desperate measures, and this is one of them. Don't abuse this tool. Слава Україні!
