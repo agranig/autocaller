@@ -22,7 +22,7 @@ cat /tmp/numbers.txt
 01234567896
 01234567897
 01234567898
-0123456789
+01234567899
 ```
 
 Then call them one by one by executing `for num in $(cat /tmp/numbers.txt); do ./dial.sh $num 10 30; done`.
