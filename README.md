@@ -1,14 +1,15 @@
 # Install
 
-run `make` to build the Docker image
+* Run `make` to build the Docker image.
+* Copy `etc/accounts.example` to `etc/accounts` and fill in proper SIP account.
+* Replace `etc/message.mp3` with the message you want to play.
 
 # Run
 
-* Run `./run.sh` in one terminal to start the a Docker container. This exposes port 8080 on the host, so it can be controlled via curl.
-* Run `./dial.sh 012345 30` in another terminal to connect to HTTP 8080 and issue dial command to 012345 for 30s while playing `etc/message.mp3`.
+* Run `./run.sh` in one terminal to start the a Docker container instance. This exposes port 8080 on the host, so it can be controlled via `dial.sh`.
+* Run `./dial.sh 012345 10 30` in another terminal to ring 012345 for 10s and then play `etc/message.mp3` for 30s.
 
 # Notes
 
-* Taking into account the current `etc/config`, you should be able to do 10 calls in parallel. 
-* No error handling or timeout handling. If the other side only picks up after 25s, the call would only last for 5s in case 30 is specified as duration.
-* If the call fails (rejected, busy), it will still wait the full 30s until the dial.sh command returns.
+* Failures while connecting calls (busy, rejects etc) as well as remote hangups are supposed to be handled gracefully.
+* You can currently only do one call per container. To parallelize, run more containers while incrementing the exposed httpd port in `run.sh` and `dial.sh`

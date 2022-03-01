@@ -1,8 +1,7 @@
 poll_method		epoll		# poll, select, epoll ..
 
 # SIP
-sip_listen		0.0.0.0:5062
-call_max_calls		10
+call_max_calls		1
 call_hold_other_calls no
 
 # Audio
@@ -62,6 +61,7 @@ module_app		auloop.so
 module_app		contact.so
 module_app		debug_cmd.so
 module_app		menu.so
+#module_app		mqtt.so
 
 
 #------------------------------------------------------------------------------
@@ -88,3 +88,15 @@ opus_complexity	        5
 opus_application	voip	# {voip,audio}
 opus_samplerate	        48000
 opus_packet_loss	30	# 0-100 percent (expected packet loss)
+
+#mqtt_broker_host        [% mqtt_host %]
+#mqtt_broker_port        [% mqtt_port %]
+#mqtt_broker_cafile      [% mqtt_cafile %]
+#mqtt_broker_clientid    [% mqtt_clientid %]
+#mqtt_broker_user        [% mqtt_user %]
+#mqtt_broker_password    [% mqtt_pass %]
+#mqtt_basetopic          [% mqtt_basetopic %]
+#mqtt_publishtopic       [% mqtt_pubtopic %]
+#mqtt_subscribetopic     [% mqtt_subtopic %]
+#mqtt_subscribeqos       2
+#mqtt_publishqos         2
